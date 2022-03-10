@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <a class="btn btn-info btn-lg m-5" href="/input" role="button">CREATE NEW DATA</a>
+    {% for post in posts %}
+        <h2>sample num : {{ post.id }}</h2>
+        <p>87Sr/86Sr : {{ post.Sr }}</p>
+        <p>87Rb/86Sr : {{ post.Rb }}</p>
+        <a class="btn btn-success btn-sm" href="/update/{{ post.id }}" role="button">Update</a>
+        <a class="btn btn-danger btn-sm" href="/delete/{{ post.id }}" role="button">Delete</a>
+
+    {% endfor %}
+</div>
+{% endblock %}

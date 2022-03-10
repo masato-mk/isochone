@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <h2 class="m-5">データ編集</h2>
+
+    <form class="m-5" action="/update/{{ post.id }}" method='POST'>
+        <div class="form-group pb-3">
+            <label for="Sr_num">87Sr/86Sr</label>
+            <input type="number" step="0.000001" class="form-control" name="Sr" value={{ post.Sr }} >
+        </div>
+        <div class="form-group pb-3">
+            <label for="Rb_num">87Rb/86Sr</label>
+            <input type="number" step="0.000001" class="form-control" name="Rb" value={{ post.Rb }}>
+        </div>
+        <a class="btn btn-outline-primary" href="/" role="button">Return</a>
+        <button type="submit" class="btn btn-primary">Change</button>
+    </form>
+
+</div>
+{% endblock %}

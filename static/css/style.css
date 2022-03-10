@@ -1,0 +1,17 @@
+h2 { 
+}
+
+
+h3 {
+    padding: 1rem 2rem;
+    border-left: 6px double #000;
+    background: #eaedee;
+}
+
+.btn--orange,h5 {
+    border-bottom: 3px solid #000;
+}
+
+#age,#initial, #isochron,#f {
+    font-size: 20px;
+}

@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <a class="btn btn-info btn-lg m-5" href="/" role="button">Home</a>
+    <h3>データベース</h3>
+    <table class="table table-striped table-hover">
+        <thread>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">87Sr/86Sr</th>
+                <th scope="col">87Rb/86Sr</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thread>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.Sr }}</td>
+                    <td>{{ post.Rb }}</td>
+                    <td><a class="btn btn-success btn-sm" href="/update/{{ post.id }}" role="button">Update</a></td>
+                    <td><a class="btn btn-danger btn-sm" href="/delete/{{ post.id }}" role="button">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-info btn-lg m-5" href="/input" role="button">CREATE NEW DATA</a>
+    <div id="base">
+        <h3>同位体年代測定の基本式</h3>
+        <div id="f">
+            <math>
+                <mfrac>
+                    <mi>87Sr</mi>
+                    <mi>86Sr</mi>
+                </mfrac>
+                <mo>=</mo>
+                <msub>
+                    <mrow>
+                        <mo>(</mo>
+                        <mfenced>
+                            <mfrac>
+                                <mi>87Sr</mi>
+                                <mi>86Sr</mi>
+                            <mfrac> 
+                        </mfenced> 
+                        <mo>)</mo>
+                    </mrow>
+                    <mn>0</mn>
+                </msub>
+                <mo>+</mo> 
+                <mrow>
+                    <mfrac>
+                        <mi>87Rb</mi>
+                        <mi>86Sr</mi>
+                    <mfrac>
+                </mrow>
+                <mo>(</mo>
+                <mfenced>
+                    <msup>
+                        <mi>e</mi>
+                        <mi>λt</mi>
+                    </msup>
+                    <mo>-</mo>
+                    <mn>1</mn>
+                </mfenced>
+                <mo>)</mo>             
+            </math>
+        </div>
+    </div>
+    <br>
+    <h3>計算結果</h3>
+    <div class="container">
+        <div id="age" class="">
+            <h5 class="">年代</h5>
+            <math id="a">
+                <mfenced>
+                    <msup>
+                        <mi>e</mi>
+                        <mi>λt</mi>
+                    </msup>
+                    <mo>-</mo>
+                    <mn>1</mn>
+                </mfenced>
+                <mo>=</mo>
+                <mn>{{ a }}</mn>
+            </math>
+            <br>
+            <math>
+                <mi>t</mi>
+                <mo>=</mo>
+                <mn>{{ t }}</mn>
+                <mi>億年</mi>
+            </math>
+        </div>
+
+        <br>
+        <div id="initial">
+            <h5>初期値</h5>
+            <math id="b">
+                <msub>
+                    <mrow>
+                        <mo>(</mo>
+                        <mfenced>
+                            <mfrac>
+                                <mi>87Sr</mi>
+                                <mi>86Sr</mi>
+                            <mfrac> 
+                        </mfenced> 
+                        <mo>)</mo>
+                    </mrow>
+                    <mn>0</mn>
+                </msub>
+                <mo>=</mo>
+                <mn>{{ b }}</mn>
+            </math>
+        </div>
+        <br>
+
+        <div id="isochron">
+            <h5>アイソクロン</h5>
+            <math id="slope">
+                <mfrac>
+                    <mi>87Sr</mi>
+    
+                    <mi>86Sr</mi>
+                </mfrac>
+                <mo>=</mo>
+                <mn>{{ b }}</mn>
+                <mo>+</mo> 
+                <mrow>
+                    <mfrac>
+                        <mi>87Rb</mi>
+                        <mi>86Sr</mi>
+                    <mfrac>
+                </mrow>
+                <mo>(</mo>
+                <mfenced>            
+                    <mn>{{ a }}</mn>
+                </mfenced>
+                <mo>)</mo>             
+            </math>
+            <br>
+            <img src="data:image/png;base64,{{ img }}" class="figure-img img-fluid rounded"/>
+
+        </div>
+        <br>
+    </div>
+
+
+    <p><a class="btn btn-outline-primary" href="/" role="button">Return</a></p>
+    
+</div>
+{% endblock %}
