@@ -30,43 +30,12 @@
     <div id="base">
         <h3>同位体年代測定の基本式</h3>
         <div id="f">
-            <math>
-                <mfrac>
-                    <mi>87Sr</mi>
-                    <mi>86Sr</mi>
-                </mfrac>
-                <mo>=</mo>
-                <msub>
-                    <mrow>
-                        <mo>(</mo>
-                        <mfenced>
-                            <mfrac>
-                                <mi>87Sr</mi>
-                                <mi>86Sr</mi>
-                            <mfrac> 
-                        </mfenced> 
-                        <mo>)</mo>
-                    </mrow>
-                    <mn>0</mn>
-                </msub>
-                <mo>+</mo> 
-                <mrow>
-                    <mfrac>
-                        <mi>87Rb</mi>
-                        <mi>86Sr</mi>
-                    <mfrac>
-                </mrow>
-                <mo>(</mo>
-                <mfenced>
-                    <msup>
-                        <mi>e</mi>
-                        <mi>λt</mi>
-                    </msup>
-                    <mo>-</mo>
-                    <mn>1</mn>
-                </mfenced>
-                <mo>)</mo>             
-            </math>
+            <div>
+                \[
+                    \frac{87Sr}{86Sr} = 
+                    \left(\frac{87Sr}{86Sr}\right)_0  + \frac{87Rb}{86Sr} \left(e^λ-1\right)
+                \]
+            </div>
         </div>
     </div>
     <br>
@@ -74,47 +43,25 @@
     <div class="container">
         <div id="age" class="">
             <h5 class="">年代</h5>
-            <math id="a">
-                <mfenced>
-                    <msup>
-                        <mi>e</mi>
-                        <mi>λt</mi>
-                    </msup>
-                    <mo>-</mo>
-                    <mn>1</mn>
-                </mfenced>
-                <mo>=</mo>
-                <mn>{{ a }}</mn>
-            </math>
+            <div id="a">
+                \[
+                    \left(e^λ-1\right) = {{ a }}
+                \]
+                \[
+                    t = {{ t }} 億年
+                \]
+            </div>
             <br>
-            <math>
-                <mi>t</mi>
-                <mo>=</mo>
-                <mn>{{ t }}</mn>
-                <mi>億年</mi>
-            </math>
         </div>
-
         <br>
         <div id="initial">
             <h5>初期値</h5>
-            <math id="b">
-                <msub>
-                    <mrow>
-                        <mo>(</mo>
-                        <mfenced>
-                            <mfrac>
-                                <mi>87Sr</mi>
-                                <mi>86Sr</mi>
-                            <mfrac> 
-                        </mfenced> 
-                        <mo>)</mo>
-                    </mrow>
-                    <mn>0</mn>
-                </msub>
-                <mo>=</mo>
-                <mn>{{ b }}</mn>
-            </math>
+            <div id="b">
+                \[
+                    \left(\frac{87Sr}{86Sr}\right)_0 = {{ b }}
+                \]
+            </div>
+
         </div>
         <br>
 
@@ -141,15 +88,17 @@
                 </mfenced>
                 <mo>)</mo>             
             </math>
+            <div>
+                \[
+                    \frac{87Sr}{86Sr} = 
+                    {{ b }}  + \frac{87Rb}{86Sr} \left({{ a }}\right)
+                \]
+            </div>
             <br>
             <img src="data:image/png;base64,{{ img }}" class="figure-img img-fluid rounded"/>
-
         </div>
         <br>
     </div>
-
-
     <p><a class="btn btn-outline-primary" href="/" role="button">Return</a></p>
-    
 </div>
 {% endblock %}
