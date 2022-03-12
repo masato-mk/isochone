@@ -33,7 +33,7 @@
             <div>
                 \[
                     \frac{87Sr}{86Sr} = 
-                    \left(\frac{87Sr}{86Sr}\right)_0  + \frac{87Rb}{86Sr} \left(e^λ-1\right)
+                    \left(\frac{87Sr}{86Sr}\right)_0  + \frac{87Rb}{86Sr} \left(e^{λt}-1\right)
                 \]
             </div>
         </div>
@@ -42,10 +42,10 @@
     <h3>計算結果</h3>
     <div class="container">
         <div id="age" class="">
-            <h5 class="">年代</h5>
+            <h5 class="">年代（傾き）</h5>
             <div id="a">
                 \[
-                    \left(e^λ-1\right) = {{ a }}
+                    \left(e^{λt}-1\right) = {{ a }}
                 \]
                 \[
                     t = {{ t }} 億年
@@ -55,7 +55,7 @@
         </div>
         <br>
         <div id="initial">
-            <h5>初期値</h5>
+            <h5>初期値（切片）</h5>
             <div id="b">
                 \[
                     \left(\frac{87Sr}{86Sr}\right)_0 = {{ b }}
