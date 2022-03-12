@@ -67,33 +67,12 @@
 
         <div id="isochron">
             <h5>アイソクロン</h5>
-            <math id="slope">
-                <mfrac>
-                    <mi>87Sr</mi>
-    
-                    <mi>86Sr</mi>
-                </mfrac>
-                <mo>=</mo>
-                <mn>{{ b }}</mn>
-                <mo>+</mo> 
-                <mrow>
-                    <mfrac>
-                        <mi>87Rb</mi>
-                        <mi>86Sr</mi>
-                    <mfrac>
-                </mrow>
-                <mo>(</mo>
-                <mfenced>            
-                    <mn>{{ a }}</mn>
-                </mfenced>
-                <mo>)</mo>             
-            </math>
-            <div>
-                \[
-                    \frac{87Sr}{86Sr} = 
-                    {{ b }}  + \frac{87Rb}{86Sr} \left({{ a }}\right)
-                \]
-            </div>
+                <div>
+                    \[
+                        \frac{87Sr}{86Sr} = 
+                        {{ b }}  + \frac{87Rb}{86Sr} \left({{ a }}\right)
+                    \]
+                </div>
             <br>
             <img src="data:image/png;base64,{{ img }}" class="figure-img img-fluid rounded"/>
         </div>
